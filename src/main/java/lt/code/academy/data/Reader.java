@@ -9,14 +9,16 @@ public class Reader {
     private String name;
     private String surname;
     private String phone;
-
+    private Set<Address> addresses;
     private Set<Book> books;
+    public Reader() {}
 
-    public Reader(ObjectId id, String name, String surname, String phone, Set<Book> books) {
+    public Reader(ObjectId id, String name, String surname, String phone, Set<Address> addresses, Set<Book> books) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.phone = phone;
+        this.addresses = addresses;
         this.books = books;
     }
 
@@ -52,6 +54,14 @@ public class Reader {
         this.phone = phone;
     }
 
+    public Set<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(Set<Address> addresses) {
+        this.addresses = addresses;
+    }
+
     public Set<Book> getBooks() {
         return books;
     }
@@ -67,6 +77,7 @@ public class Reader {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", phone='" + phone + '\'' +
+                ", addresses=" + addresses +
                 ", books=" + books +
                 '}';
     }

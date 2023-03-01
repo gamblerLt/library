@@ -1,15 +1,16 @@
 package lt.code.academy;
 
-
-
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import static com.mongodb.client.model.Filters.*;
+
+import com.mongodb.client.MongoIterable;
 import lt.code.academy.data.Book;
 import lt.code.academy.data.Reader;
-import org.bson.Document;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,8 +28,8 @@ public class MyMongoClient {
 
         MongoClient client = MongoObjectClientProvider.getClient();
         MongoDatabase database = client.getDatabase("taskLibraryDB");
-        MyMongoClient myMongoClient = new MyMongoClient(database.getCollection("readers", Reader.class),
-                                                        database.getCollection("books", Book.class))  ;
+        MyMongoClient aplication = new MyMongoClient(database.getCollection("readers", Reader.class),
+                database.getCollection("books", Book.class));
 
 
         //apl create books
@@ -36,18 +37,46 @@ public class MyMongoClient {
         Scanner scanner = new Scanner(System.in);
         String action;
         do {
-            myMongoClient.menu();
+            aplication.menu();
             action = scanner.nextLine();
-            myMongoClient.readerSelection(scanner, action);
-            while (!action.equals("5")) ;
-        }
-
+            aplication.readerSelection(scanner, action);
+        } while (!action.equals("5"));
     }
+        private void readerSelection(Scanner scanner, String action){
+            switch (action) {
+                case "1" -> orderBook(scanner);
+                case "2" -> showAvailableBooks();
+                case "3" -> System.out.println("3");
+                case "4" -> System.out.println("4");
+                case "5" -> System.out.println("Progrma baigė darbą");
+                default -> System.out.println("Tokio veiksmo nera");
+            }
+            }
 
+        private void orderBook(Scanner scanner) {
+            System.out.println("Iveskite norimos knygos pavadinima");
+            String title = scanner.nextLine();
+            System.out.println("Iveskite knygos autoriu");
+            String author = scanner.nextLine();
+            FindIterable<Book> books = bookCollection.find(and(eq("title", title), eq("author", author)));
 
-
-
+            MongoCursor<Book> book = books.iterator();
+            if(!book.hasNext()) {
+                System.out.println("Tokios knygos nera");
+                return;
         }
+            System.out.println("Iveskite varda ir pavarde");
+        }
+
+        private void showAvailableBooks() {
+        FindIterable<Book> books = bookCollection.find();
+        for(Book book: books) {
+            if(book.getReservation()==null) {
+                System.out.printf("%s %s %s %n", book.getTitle(), book.getAuthor(), book.getPublishYear());
+            }
+        }
+        }
+
         private void menu() {
             System.out.println("""
                     1. uzsakyti
@@ -56,8 +85,6 @@ public class MyMongoClient {
                     4. pratesimas
                     5. iseiti
                     """);
-
-
     }
 
    private  void createBooks() {

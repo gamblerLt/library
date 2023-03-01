@@ -9,16 +9,15 @@ public class Address {
     private String street;
     private String postCode;
 
-    private Set<Address> addresses;
+   // private Set<Address> addresses;
 
     public Address(){}
 
-    public Address(String country, String city, String street, String postCode, Set<Address> addresses) {
+    public Address(String country, String city, String street, String postCode) {
         this.country = country;
         this.city = city;
         this.street = street;
         this.postCode = postCode;
-        this.addresses = addresses;
     }
 
     public String getCountry() {
@@ -53,13 +52,7 @@ public class Address {
         this.postCode = postCode;
     }
 
-    public Set<Address> getAddresses() {
-        return addresses;
-    }
 
-    public void setAddresses(Set<Address> addresses) {
-        this.addresses = addresses;
-    }
 
     @Override
     public String toString() {
@@ -68,7 +61,6 @@ public class Address {
                 ", city='" + city + '\'' +
                 ", street='" + street + '\'' +
                 ", postCode='" + postCode + '\'' +
-                ", addresses=" + addresses +
                 '}';
     }
 }
