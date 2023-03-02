@@ -61,7 +61,7 @@ public class Book {
         this.publishYear = publishYear;
     }
 
-    public String getReservation() {
+    public Reservation getReservation() {
         return reservation;
     }
 

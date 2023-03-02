@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="906c519d-6aca-4376-b826-32e22f656727" name="Changes" comment="PasiruosimasTestui">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lt/code/academy/LibraryRepositoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/code/academy/MongoObjectClientProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/code/academy/MongoObjectClientProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/code/academy/MyMongoClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/code/academy/MyMongoClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/code/academy/data/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/code/academy/data/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/code/academy/data/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/code/academy/data/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/code/academy/data/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/code/academy/data/Book.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,14 +47,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Kompiuteris/Documents/GitHub/WurkHome/library"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kompiuteris/Documents/GitHub/WurkHome/library&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="MyMongoClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lt.code.academy.MyMongoClient" />
@@ -91,7 +90,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1677613871394</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="PasiruosimasTestui">
+      <created>1677672961721</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1677672961721</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
